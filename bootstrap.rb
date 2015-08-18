@@ -1,6 +1,8 @@
 #! /usr/bin/env ruby
 
-filename = File.dirname(__FILE__) + '/bootstrap.rc'
+mydir = File.dirname(File.realpath(__FILE__))
+
+filename = File.realpath(mydir + '/bootstrap.rc')
 puts '* Bootstrapping Lord with environment from: ' + filename
 ENV.replace(eval(`bash -c 'source #{filename} && ruby -e "p ENV"'`))
 
@@ -26,8 +28,8 @@ unless(`ansible --version`)
     system(cmd)
 end
 
-Dir.chdir(File.dirname(__FILE__) + '/Installation') do
-    puts '* Changing into installation directory ' + Dir.pwd
+Dir.chdir(ENV['LORD_HOME'] + '/Installation') do
+    puts '* Changing into target installation directory ' + Dir.pwd
     puts '* Running installation playbook'
     system('ansible-playbook install.yml') 
 end

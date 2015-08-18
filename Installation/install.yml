@@ -3,7 +3,8 @@
 - name: Lord Installation
   hosts: localhost
   vars: 
-    vendors_directory: "{{ ansible_env.PWD }}/../Vendors"
+    vendors_directory_raw: "{{ ansible_env.PWD }}/../Vendors"
+    vendors_directory: "{{ vendors_directory_raw | realpath }}"
 
   tasks:
     - debug: msg={{ vendors_directory }}

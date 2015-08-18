@@ -7,7 +7,7 @@ Warning: This is alpha and you may lose data!
 
 ```bash
 git clone https://github.com/elmar-hinz/OSX.Lord.git Lord_Installer
-Lord_Installer/install.rb
+Lord_Installer/install
 rm -rf Lord_Installer
 ```
 
