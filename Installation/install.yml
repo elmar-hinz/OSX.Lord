@@ -1,6 +1,13 @@
 ---
 
-- hosts: localhost
+- name: Lord Installation
+  hosts: localhost
+  vars: 
+    vendors_directory: "{{ ansible_env.PWD }}/../Vendors"
+
   tasks:
-    - debug: msg=Installing
+    - debug: msg={{ vendors_directory }}
+
+    - name: Installing the core of Lord.ansible
+      git: repo=https://github.com/elmar-hinz/OSX.ansible.git dest={{ vendors_directory }}/Lord/Ansible
 

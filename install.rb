@@ -1,7 +1,7 @@
 #! /usr/bin/env ruby
 
 filename = File.dirname(__FILE__) + '/bootstrap.rc'
-puts '* source bootstrapping environment settings from: ' + filename
+puts '* Bootstrapping Lord with environment from: ' + filename
 ENV.replace(eval(`bash -c 'source #{filename} && ruby -e "p ENV"'`))
 
 puts '* Ensuring Lord is cloned into ' + ENV['LORD_HOME'] 
