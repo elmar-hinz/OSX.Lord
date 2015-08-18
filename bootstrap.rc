@@ -1,0 +1,10 @@
+
+# Use this env to bootstrap Lord
+export HOMEBREW_PREFIX="$HOME/BootstrappingHomebrew"
+export HOMEBREW_TEMP="$HOMEBREW_PREFIX/Temp"
+export HOMEBREW_CACHE="$HOME/Library/Caches/Homebrew"
+export PATH="$HOMEBREW_PREFIX/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
+export LORD_HOME="$HOME/Library/Lord"
+
+
