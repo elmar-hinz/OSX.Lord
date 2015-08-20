@@ -14,7 +14,7 @@ unless(Dir.exists?(ENV['LORD_HOME']))
 end
 
 puts '* Ensuring Homebrew is available ' 
-unless(`brew --version`) 
+if(`which brew`.empty?) 
     cmd = 'git clone https://github.com/Homebrew/homebrew.git ' + ENV['HOMEBREW_PREFIX'] 
     puts '* ' + cmd
     system(cmd)
@@ -22,7 +22,7 @@ unless(`brew --version`)
 end
 
 puts '* Ensuring Ansible is installed'
-unless(`ansible --version`) 
+if(`which ansible`.empty?) 
     cmd = 'brew install ansible'
     puts '* ' + cmd
     system(cmd)

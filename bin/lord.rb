@@ -3,8 +3,8 @@
 mydir = File.dirname(File.realpath(__FILE__))
 
 if(ARGV[0] == 'ansible')
-    Dir.chdir(mydir + '/../Vendors/Lord/Ansible') do
-        exec('ansible-playbook osx.yml')
+    Dir.chdir(mydir + '/../Vendors/Lord/Me') do
+        exec('ansible-playbook me.yml')
     end
 else
     puts 'Usage: lord ansible' 

@@ -10,5 +10,5 @@
     - debug: msg={{ vendors_directory }}
 
     - name: Installing the core of Lord.ansible
-      git: repo=https://github.com/elmar-hinz/OSX.ansible.git dest={{ vendors_directory }}/Lord/Ansible
+      git: repo=https://github.com/elmar-hinz/OSX.Me.git dest={{ vendors_directory }}/Lord/Me
 
